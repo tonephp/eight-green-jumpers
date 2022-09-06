@@ -7,6 +7,7 @@ class App {
 
     public function __construct()
     {
+        include '../core/functions.php';
         self::init();
         self::$app = Registry::getInstance();
         $this->getParams();
@@ -23,20 +24,10 @@ class App {
     }
 
     protected static function init() {
-        define('PUBLIC', __DIR__ . '/../../../../public');
-        define('ROOT', dirname(__DIR__ . '/../../../../..'));
-        define("APP", ROOT . "/app");
-        define("CORE", dirname(__DIR__) . "/core");
-        define("HELPERS", ROOT . "/helpers");
-        define("CACHE", ROOT . '/tmp/cache');
-        define("LOGS", ROOT . '/tmp/logs');
-        define("CONFIG", ROOT . '/config');
-        define("LAYOUT", "default");
+        require '../config/constants.php';
+    }
 
-        include CORE . '/functions.php';
-
-        define("PATH", siteUrl());
-        define("ADMIN", PATH . '/admin');
-        define("NO_IMAGE", 'uploads/no_image.jpg');
+    protected static function initDev() {
+        require '../config/constants-dev.php';
     }
 }
