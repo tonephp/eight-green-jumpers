@@ -1,6 +1,7 @@
 {
     "name": "tonephp/eight-green-jumpers",
     "license": "BSD-3-Clause",
+    "description": "PHP Microframework",
     "authors": [
         {
             "name": "Andrii Pereverziev",
