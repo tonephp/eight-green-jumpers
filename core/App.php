@@ -8,10 +8,12 @@ if (PHP_MAJOR_VERSION < 8) {
 
 class App {
     public static $app;
+    public static $root;
 
     public function __construct()
     {
-        include '../core/functions.php';
+        self::$root = dirname(__DIR__);
+        include self::$root . '/core/functions.php';
         self::init();
         new ErrorHandler();
         self::$app = Registry::getInstance();
@@ -33,10 +35,10 @@ class App {
     }
 
     protected static function init() {
-        require dirname(__DIR__) . '/config/constants.php';
+        require self::$root . '/config/constants.php';
     }
 
     protected static function initDev() {
-        require dirname(__DIR__) . '/config/constants-dev.php';
+        require self::$root . '/config/constants-dev.php';
     }
 }
