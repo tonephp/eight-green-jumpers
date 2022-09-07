@@ -12,7 +12,7 @@ class App {
     public function __construct()
     {
         include '../core/functions.php';
-        self::init();
+        self::initDev();
         new ErrorHandler();
         self::$app = Registry::getInstance();
         $this->getParams();
@@ -33,10 +33,10 @@ class App {
     }
 
     protected static function init() {
-        require '../config/constants.php';
+        require dirname(__DIR__) . '/config/constants.php';
     }
 
     protected static function initDev() {
-        require '../config/constants-dev.php';
+        require dirname(__DIR__) . '/config/constants-dev.php';
     }
 }
