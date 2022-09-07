@@ -19,11 +19,15 @@ class App {
     }
 
     protected function getParams() {
-        $params = require_once CONFIG . '/params.php';
+        $paramsPath = CONFIG . '/params.php';
+        
+        if (is_file($paramsPath)) {
+            $params = require_once CONFIG . '/params.php';
 
-        if (!empty($params)) {
-            foreach ($params as $k => $v) {
-                self::$app->setProperty($k, $v);
+            if (!empty($params)) {
+                foreach ($params as $k => $v) {
+                    self::$app->setProperty($k, $v);
+                }
             }
         }
     }
