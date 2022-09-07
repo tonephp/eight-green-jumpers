@@ -12,7 +12,7 @@ class App {
     public function __construct()
     {
         include '../core/functions.php';
-        self::initDev();
+        self::init();
         new ErrorHandler();
         self::$app = Registry::getInstance();
         $this->getParams();
