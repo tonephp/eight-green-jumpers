@@ -1,12 +1,13 @@
 <?php
 
-define('PUBLIC', __DIR__ . '/../../../../public');
+define('WWW', __DIR__ . '/../../../../public');
 define('ROOT', dirname(__DIR__ . '/../../../../..'));
 define("APP", ROOT . "/app");
 define("CORE", dirname(__DIR__) . "/core");
 define("HELPERS", ROOT . "/helpers");
-define("CACHE", ROOT . '/tmp/cache');
-define("LOGS", ROOT . '/tmp/logs');
+define("TMP", ROOT . "/tmp");
+define("CACHE", TMP . '/cache');
+define("LOGS", TMP . '/logs');
 define("CONFIG", ROOT . '/config');
 define("LAYOUT", "default");
 define("PATH", siteUrl());

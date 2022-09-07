@@ -1,13 +1,13 @@
 <?php
 
-if (PHP_MAJOR_VERSION < 8) {
-    die('Required php version is >= 8');
-}
-
 require_once '../vendor/autoload.php';
+
+define("DEBUG", 1);
 
 new \core\App;
 
 debug(app()->getProperties());
+
+throw new Exception('Some error');
 
 

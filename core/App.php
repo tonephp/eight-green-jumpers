@@ -2,13 +2,18 @@
 
 namespace core;
 
+if (PHP_MAJOR_VERSION < 8) {
+    die('Required php version is >= 8');
+}
+
 class App {
     public static $app;
 
     public function __construct()
     {
         include '../core/functions.php';
-        self::init();
+        self::initDev();
+        new ErrorHandler();
         self::$app = Registry::getInstance();
         $this->getParams();
     }
