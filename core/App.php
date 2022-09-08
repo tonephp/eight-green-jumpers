@@ -20,6 +20,12 @@ class App {
         $this->getParams();
     }
 
+    public static function start() {
+        $query = $_SERVER['REQUEST_URI'];
+        $query = trim(urldecode($query), '/');
+        Router::dispatch($query);
+    }
+
     protected function getParams() {
         $paramsPath = CONFIG . '/properties.php';
         
@@ -40,5 +46,9 @@ class App {
 
     protected static function initDev() {
         require self::$root . '/config/constants-dev.php';
+    }
+
+    public static function addRoutes($filePath) {
+        require_once ROOT . $filePath;
     }
 }

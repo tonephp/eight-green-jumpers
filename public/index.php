@@ -2,8 +2,9 @@
 
 require_once '../vendor/autoload.php';
 
-define("DEBUG", false);
+define("DEBUG", true);
 
 new \core\App;
 
-throw new Exception('Some error');
+\core\App::addRoutes('/app/routes.php');
+\core\App::start();
