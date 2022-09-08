@@ -2,10 +2,8 @@
 
 require_once '../vendor/autoload.php';
 
-define("DEBUG", 1);
+define("DEBUG", false);
 
 new \core\App;
-
-debug(app()->getProperties());
 
 throw new Exception('Some error');
