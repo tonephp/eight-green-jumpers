@@ -9,5 +9,3 @@ new \core\App;
 debug(app()->getProperties());
 
 throw new Exception('Some error');
-
-

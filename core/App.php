@@ -21,10 +21,10 @@ class App {
     }
 
     protected function getParams() {
-        $paramsPath = CONFIG . '/params.php';
+        $paramsPath = CONFIG . '/properties.php';
         
         if (is_file($paramsPath)) {
-            $params = require_once CONFIG . '/params.php';
+            $params = require_once $paramsPath;
 
             if (!empty($params)) {
                 foreach ($params as $k => $v) {
