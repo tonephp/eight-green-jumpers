@@ -9,7 +9,8 @@ class MainController extends Controller
 
     public function indexAction()
     {
-        echo __METHOD__;
+        $this->layout = 'ishop';
+        //echo __METHOD__;
     }
 
 }

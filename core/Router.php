@@ -37,7 +37,6 @@ class Router {
     public static function dispatch($url)
     {
         $url = self::removeQueryString($url);
-        debug($url);
         if (self::matchRoute($url)) {
             $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller';
             
@@ -48,6 +47,7 @@ class Router {
                 $action = self::lowerCamelCase(self::$route['action'] . 'Action');
                 if (method_exists($controllerObject, $action)) {
                     $controllerObject->$action();
+                    $controllerObject->getView();
                 } else {
                     throw new \Exception("Method {$controller}::{$action} not found", 404);
                 }
