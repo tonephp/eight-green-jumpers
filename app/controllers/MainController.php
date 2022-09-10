@@ -10,7 +10,9 @@ class MainController extends Controller
     public function indexAction()
     {
         $this->layout = 'ishop';
-        //echo __METHOD__;
+        $names = ['John', 'Dave', 'Katy'];
+        $this->setMeta('Main page', 'Description', 'Keywords');
+        $this->set(compact('names'));
     }
 
 }

@@ -14,3 +14,7 @@ function debug($arr) {
 function app() {
     return \core\App::$app;
 }
+
+function h($str) {
+    return htmlspecialchars($str);
+}
